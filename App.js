@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { API_LANGUAGE } from '@env'
+import useResults from './src/hooks/useResults';
 
 export default function App() {
+  const results = useResults();
 
   return (
     <SafeAreaView style={styles.view}>
-      <Text></Text>
+      <Text>{results.original_title}</Text>
     </SafeAreaView>
   );
 }
