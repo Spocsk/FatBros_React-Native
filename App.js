@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { API_LANGUAGE } from 'react-native-dotenv';
+import { API_LANGUAGE } from '@env'
 
 export default function App() {
+
   return (
     <SafeAreaView style={styles.view}>
-      <Text>{API_LANGUAGE}</Text>
+      <Text></Text>
     </SafeAreaView>
   );
 }
