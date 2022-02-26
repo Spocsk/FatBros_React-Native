@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 export default function App() {
   return (
-    <View >
-    </View>
+    <SafeAreaView style={styles.view}>
+      <Text>testhhhfg</Text>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+  }
 });
