@@ -1,11 +1,13 @@
-import axios from "axios";
+import axios from 'axios'
 import {
-    API_TMDB_BEARER_PARAM,
-    API_TMDB_QUERY_PARAMS,
+    API_BASE_URL,
+    API_BEARER_TOKEN
 } from '@env'
 
-export default axios.create({
-  baseURL: 'https://api.themoviedb.org/3',
-  headers: {API_TMDB_BEARER_PARAM},
-  params: {API_TMDB_QUERY_PARAMS}
-});
+export function fetchDiscoverMovies() {
+  return axios.get(`${API_BASE_URL}/discover/movie`, {
+    headers: {
+      Authorization: 'bearer ' + API_BEARER_TOKEN
+  }
+  })
+}
