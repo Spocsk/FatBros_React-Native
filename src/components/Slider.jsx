@@ -10,7 +10,7 @@ export default function Slider({data}) {
         data={data}
         keyExtractor={movie => movie.id}
         renderItem={({item}) => {
-            return <Card data={item.original_title}></Card>
+            return <Card img={item.poster_path}></Card>
         }}
     />
   );
