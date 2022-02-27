@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import { API_IMAGE_BASE_URL } from '@env';
 
 export default function Card({img}) {
