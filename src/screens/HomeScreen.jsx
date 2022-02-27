@@ -13,13 +13,9 @@ export default function HomeScreen({navigation}) {
     <SafeAreaView style={styles.view}>
       <View>
         <Subtitle>À découvrir</Subtitle>
-        <Slider data={movies}></Slider>
+        <Slider navigation={navigation} data={movies}></Slider>
         <Subtitle>Top des séries</Subtitle>
         <Slider data={tv}></Slider>
-        <Button
-          title="test"
-          onPress={() => navigation.navigate('MovieDetails')}
-        />
       </View>
     </SafeAreaView>
   );
