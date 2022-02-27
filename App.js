@@ -1,30 +1,19 @@
-import { StyleSheet, SafeAreaView, View } from 'react-native';
-import Slider from './src/components/Slider';
-import Subtitle from './src/components/Subtitle';
-import useMovies from './src/hooks/useMovies';
-import useTvShows from './src/hooks/useTvShows'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './src/screens/HomeScreen';
+import MovieDetailsScreen from './src/screens/MovieDetailsScreen';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
 
-  const movies = useMovies();
-  const tv = useTvShows();
-  console.log(tv)
-
+const Navigation = () => {
   return (
-    <SafeAreaView style={styles.view}>
-      <View>
-        <Subtitle>À découvrir</Subtitle>
-        <Slider data={movies}></Slider>
-        <Subtitle>Top des séries</Subtitle>
-        <Slider data={tv}></Slider>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen}/>
+            <Stack.Screen name="MovieDetails" component={MovieDetailsScreen}/>
+        </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    backgroundColor: 'rgb(31,27,26)',
-  }
-});
+export default Navigation;
