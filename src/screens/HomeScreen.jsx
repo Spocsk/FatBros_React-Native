@@ -24,6 +24,6 @@ export default function HomeScreen({navigation}) {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: 'rgb(31,27,26)',
+    backgroundColor: 'rgb(36,35,33)',
   }
 });
