@@ -11,7 +11,7 @@ export default function Slider({data, navigation}) {
         keyExtractor={movie => movie.id}
         renderItem={({item}) => {
             return(
-              <TouchableOpacity onPress={() => navigation.navigate('MovieDetails', {id: item.id})}>
+              <TouchableOpacity onPress={() => navigation.navigate('MovieDetails', {data: item})}>
                 <Card img={item.poster_path}></Card>
               </TouchableOpacity>
             )
