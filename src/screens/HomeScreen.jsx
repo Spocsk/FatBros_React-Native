@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, View, Button } from 'react-native';
+import { StyleSheet, SafeAreaView, View} from 'react-native';
 import Slider from '../components/Slider';
 import Subtitle from '../components/Subtitle';
 import useMovies from '../hooks/useMovies';
@@ -13,9 +13,9 @@ export default function HomeScreen({navigation}) {
     <SafeAreaView style={styles.view}>
       <View>
         <Subtitle>À découvrir</Subtitle>
-        <Slider navigation={navigation} data={movies}></Slider>
+        <Slider navigation={navigation} data={movies}/>
         <Subtitle>Top des séries</Subtitle>
-        <Slider data={tv}></Slider>
+        <Slider data={tv}/>
       </View>
     </SafeAreaView>
   );
