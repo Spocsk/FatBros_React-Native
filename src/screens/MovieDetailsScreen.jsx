@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Image, View} from 'react-native'
+import { StyleSheet, Image, View} from 'react-native'
 import PreviousButton from '../components/Button/PreviousButton'
 import { API_IMAGE_BASE_URL } from '@env'
 
@@ -6,8 +6,10 @@ export default function MovieDetailsScreen({navigation, route}) {
     const data = route.params.data
     return (
         <View style={styles.container}>
-            <PreviousButton onClick={() => navigation.navigate('Home')}></PreviousButton>
-            <Image style={styles.img} source={{uri: `${API_IMAGE_BASE_URL}${data.backdrop_path}`}}></Image>
+            <View style={styles.topContainer}>
+                <PreviousButton onClick={() => navigation.navigate('Home')}/>
+                <Image style={styles.img} source={{uri: `${API_IMAGE_BASE_URL}${data.poster_path}`}}/>
+            </View>
         </View>
     )
 }
@@ -15,13 +17,19 @@ export default function MovieDetailsScreen({navigation, route}) {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
+        backgroundColor: 'rgb(36,35,33)',
+    },
+    topContainer: {
         position: 'relative',
-        height: 550
+        height: 450,
+        display: 'flex',
+        justifyContent: 'flex-start',
+        width: '100%',
     },
     img: {
-        zIndex: 0,
+        width: '100%',
         height: '100%',
-        zIndex: 1,
         resizeMode: 'cover',
-    }
+    },
   });
